@@ -116,7 +116,7 @@ const data = [
   Refresh the page to see the new article.
 */
 
-function articleMaker(articleObj) {
+function articleMaker(referenceArticle) {
   const articleBody = document.createElement("div")
   const articleHeader = document.createElement("h2")
   const articleDate = document.createElement("p")
@@ -127,15 +127,12 @@ function articleMaker(articleObj) {
   articleBody.classList.add("article")
   articleDate.classList.add("date")
   articleSpan.classList.add("expandButton")
-  
+  articleHeader.textContent = referenceArticle.title
+  articleDate.textContent = referenceArticle.date
+  articleFirstParagraph.textContent = referenceArticle.firstParagraph
+  articleSecondParagraph.textContent = referenceArticle.secondParagraph
+  articleSecondParagraph.textContent = referenceArticle.thirdParagraph
 
-
-
-  
- 
-
-  
-  
   }
 
   
