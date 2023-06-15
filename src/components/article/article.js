@@ -87,6 +87,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "ETA Assignment Complete",
+    date: "Forever Infinity, 20∞",
+    firstParagraph: "This",
+    secondParagraph: "Took",
+    thirdParagraph: "Super Long"
   }
 ];
 
@@ -124,15 +131,34 @@ function articleMaker(referenceArticle) {
   const articleSecondParagraph = document.createElement("p")
   const articleThirdParagraph = document.createElement("p")
   const articleSpan = document.createElement("span")
+  //
   articleBody.classList.add("article")
   articleDate.classList.add("date")
   articleSpan.classList.add("expandButton")
+  //
   articleHeader.textContent = referenceArticle.title
   articleDate.textContent = referenceArticle.date
   articleFirstParagraph.textContent = referenceArticle.firstParagraph
   articleSecondParagraph.textContent = referenceArticle.secondParagraph
-  articleSecondParagraph.textContent = referenceArticle.thirdParagraph
-
+  articleThirdParagraph.textContent = referenceArticle.thirdParagraph
+  articleSpan.textContent = "+"
+  //
+  articleSpan.addEventListener("click", () => {
+    articleBody.classList.toggle("article-open")
+  })
+  articleBody.append(articleHeader, articleDate, articleFirstParagraph, articleSecondParagraph, articleThirdParagraph, articleSpan)
+  //
+  return articleBody
   }
+  
+
+  const domArticle = document.querySelector(".articles")
+  //
+  const articleArray = data.map((article) => {
+    const constructArticle = articleMaker(article)
+    domArticle.appendChild(constructArticle)
+  })
+
+
 
   
