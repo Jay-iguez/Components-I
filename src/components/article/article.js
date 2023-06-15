@@ -124,7 +124,15 @@ function articleMaker(articleObj) {
   const articleSecondParagraph = document.createElement("p")
   const articleThirdParagraph = document.createElement("p")
   const articleSpan = document.createElement("span")
+  articleBody.classList.add("article")
+  articleDate.classList.add("date")
+  articleSpan.classList.add("expandButton")
+  
 
+
+
+  
+ 
 
   
   
